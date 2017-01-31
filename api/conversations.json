@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "recipient": "Suzy",
+    "messages": [
+      {
+        "id": 1,
+        "to": "Suzy",
+        "from": "Me",
+        "content": "Hey Suzy, feel free to call me if you have any questions. Have a safe flight!"
+      },
+      {
+        "id": 2,
+        "to": "Me",
+        "from": "Suzy",
+        "content": "Thanks! Will do. Looks like I'll be getting in around 3"
+      },
+      {
+        "id": 3,
+        "to": "Me",
+        "from": "Suzy",
+        "content": "Actually my flight's been pushed back a bit due to the storms..."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "recipient": "Jasmine",
+    "messages": [
+      {
+        "id": 1,
+        "to": "Jasmine",
+        "from": "Me",
+        "content": "Just saw your text! If you get in before 10am, feel free to double-park behind the car in the driveway."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "recipient": "Lupe",
+    "messages": [
+      {
+        "id": 1,
+        "to": "Lupe",
+        "from": "Me",
+        "content": "Hi Lupe, in case you need it--the passcode for the lockbox with the housekey is 3254"
+      }
+    ]
+  }
+]

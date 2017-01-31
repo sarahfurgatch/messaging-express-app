@@ -1,10 +1,108 @@
 <html>
+<html>
     <head>
     	<title><%= title %></title>
     	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     </head>
     <body>
+    	<% include ../views/navbar %>
     	<h1><%= title %></h1>
-  		<p>Welcome to <%= title %></h1>
-    </body>
+  		<h3>Your <%= title %> Inbox</h3>
+        <div class="container">
+        <hr>
+            <div class="row">
+                <div class="col-sm-3 col-md-2">
+                    <a href="/users"  class="btn btn-danger btn-sm btn-block" role="button">
+                        <i class="glyphicon glyphicon-edit"></i> 
+                        New Chat
+                    </a>
+        <hr>
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active">
+                    <a href="#">
+                        <span class="badge pull-right">3</span> 
+                        Inbox 
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Important</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="badge pull-right">2</span>
+                        Drafts
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-md-10">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#home" data-toggle="tab">
+                        <span class="glyphicon glyphicon-inbox"></span>
+                        Traveling
+                    </a>
+                </li>
+                <li>
+                    <a href="#profile" data-toggle="tab">
+                        <span class="glyphicon glyphicon-user"></span>
+                        Hosting
+                    </a>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="home">
+                    <div class="list-group">
+                    	<% conversations.forEach(function(conversation){ %>
+                        <a href="/conversation/<%= conversation.id %>">
+                        <div class="list-group-item">
+                            <span class="name conversation-recipient">
+                                <%= conversation.recipient %>
+                            </span> 
+                            <span class="text-muted">
+                                <%= conversation.messages[0].content %>
+                        	</span>
+                        </a>
+                        <a href="/users">
+                            <span class="glyphicon glyphicon-trash pull-right"></span>
+                        </a>
+                        <span class="badge pull-right">12:10 AM</span>
+                        </div>
+                        <% }); %>
+                    </div>
+                </div>
+                <div class="tab-pane fade in" id="profile">
+                    <div class="list-group">
+                        <div class="list-group-item">
+                            <span class="text-center">This tab is empty.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade in" id="messages">
+                    ...</div>
+                <div class="tab-pane fade in" id="settings">
+                    This tab is empty.</div>
+            </div>
+            
+            <div class="row-md-12">
+                <div class="well"> 
+                  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">About</a>  | 
+                  <a href="http://calmingmanatee.com/">Policies</a>  | 
+                  <a href="https://www.youtube.com/watch?v=JXFKEFaKxSQ">Hosting Guide</a> 
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
 </html>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>

@@ -1,0 +1,36 @@
+<html>
+
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <% include ../views/navbar %>
+    <h1><%= title %></h1>
+    <h3>Your <%= title %> Guests & Hosts</h3>
+    <h5>Click on a user to start a chat<h5/>
+
+    <div class="container user-div">
+      <div class="row">
+        <div class="col-lg-12">
+        <% users.forEach(function(user){ %>
+        <hr />
+        <div class="media">
+            <a href="/compose" class="pull-left">        
+              <img alt="64x64" data-src="holder.js/64x64" class="media-object img-thumbnail user-img" src="http://core.cafimg.com/lib/images/avatar.jpg">      
+              </a>
+          <div class="media-body">
+            <h3 class="media-heading"><strong><a href="/"><%= user.name %></a></strong></h3>
+            <p class="small pull-left">Last visited <span class="glyphicon glyphicon-time timestamp" data-toggle="tooltip" data-placement="bottom" title="Monday 24 April 2016, 6:25PM"></span> 12 hours ago</p>
+          </div>
+        </div>    
+        <% }); %>
+        </div>
+      </div>
+    </div>
+
+    </body>
+</html>
